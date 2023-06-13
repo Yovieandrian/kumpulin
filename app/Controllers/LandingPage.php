@@ -37,6 +37,7 @@ class LandingPage extends BaseController
     // Function Proses Data 
     public function process()
     {
+
         helper(['form', 'url']);
 
         $validation = $this->validate([
