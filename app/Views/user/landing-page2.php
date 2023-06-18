@@ -46,7 +46,7 @@
                     <li><a class="nav-link scrollto" href="#portfolio">Klasifikasi Sampah</a></li>
                     <li><a class="nav-link scrollto" href="#team">Aktivitas Anda</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Log-Out</a></li>
+                    <li><a class="nav-link scrollto" href="<?= site_url('Auth/logout'); ?>">Log-Out</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -470,7 +470,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <center>
-                                    <p>Saldo belum ditukar.</p>
+                                    <p>Poin belum ditukar.</p>
                                 </center>
 
                                 <div class="table-responsive mt-3">

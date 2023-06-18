@@ -242,8 +242,8 @@
                                 </ul>
                             </div>
                             <!--  -->
-                            <!-- <div class="card-body">
-                                
+                            <div class="card-body">
+
 
                                 <h5 class="card-title">Reports <span>/Today</span></h5>
 
@@ -304,7 +304,7 @@
                                 </script>
                                 End Line Chart
 
-                            </div> -->
+                            </div>
 
                         </div>
                     </div>

@@ -29,6 +29,13 @@
         <!-- End Data Penjemputan Nav -->
 
         <li class="nav-item">
+            <a class="nav-link collapsed" href="<?= base_url('Dashboard/penjemputan'); ?>">
+                <i class="bx bx-coin-stack"></i><span>Poin Pengguna</span>
+            </a>
+        </li>
+        <!-- End Data Poin Pengguna Nav -->
+
+        <li class="nav-item">
             <a class="nav-link collapsed" href="<?= base_url('Dashboard/sampah'); ?>">
                 <i class="bi bi-trash3"></i><span>Data Sampah Pengguna</span>
             </a>
