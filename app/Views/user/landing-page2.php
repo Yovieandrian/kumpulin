@@ -149,7 +149,7 @@
 
                 <div class="section-title">
                     <h2>Panduan Ambil</h2>
-                    <p>Berikut ini adalah tata cara pemesanan layanan penjemputan pada Website Kumpulin.</p>
+                    <p>Berikut ini adalah panduan pemesanan layanan penjemputan pada Website Kumpulin.</p>
                 </div>
 
                 <div class="row">
@@ -157,7 +157,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-package"></i></div>
                             <h4 class="title"><a href="">Kumpulkan Sampah</a></h4>
-                            <p class="description">Kumpulkan sampah sesuai klasifikasi yang telah ditentukan.</p>
+                            <p class="description">Kumpulkan dan pilah sampah sesuai jenis yang telah ditentukan.</p>
                         </div>
                     </div>
 
@@ -165,7 +165,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-mobile-alt"></i></div>
                             <h4 class="title"><a href="">Pesan Layanan</a></h4>
-                            <p class="description">Pesan layanan penjemputan pada Website Kumpulin.</p>
+                            <p class="description">Pesan layanan penjemputan pada beranda Website Kumpulin.</p>
                         </div>
                     </div>
 
@@ -181,10 +181,9 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-trip"></i></div>
                             <h4 class="title"><a href="">Penjemputan</a></h4>
-                            <p class="description">Dan Tim Kumpulin akan segera mengambil sampahmu.</p>
+                            <p class="description">Tim Kumpulin akan segera mengambil sampah kerumahmu.</p>
                         </div>
                     </div>
-
                 </div>
 
             </div>

@@ -32,10 +32,10 @@
                                     <th scope="col">No.</th>
                                     <th scope="col">Nama Pengguna</th>
                                     <th scope="col">Alamat</th>
-                                    <th scope="col">Tgl. Penjemputan</th>
-                                    <th scope="col">Sesi</th>
+                                    <!-- <th scope="col">Tgl. Penjemputan</th> -->
+                                    <!-- <th scope="col">Sesi</th> -->
                                     <th scope="col">Status</th>
-                                    <!-- <th scope="col">Poin</th> -->
+                                    <th scope="col">Poin</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -52,10 +52,10 @@
                                         <td><?= $no++; ?>.</td>
                                         <td><?= $d['username']; ?></td>
                                         <td><?= $d['alamat']; ?></td>
-                                        <td><?= $d['tgl_jemput']; ?></td>
-                                        <td><?= $d['sesi']; ?></td>
+                                        <!-- <td><?= $d['tgl_jemput']; ?></td> -->
+                                        <!-- <td><?= $d['sesi']; ?></td> -->
                                         <td><?= $d['status']; ?></td>
-                                        <!-- <td><i class='bx bx-coin-stack' style="color: gold;"></i></td> -->
+                                        <td><i class='bx bx-coin-stack' style="color: gold;"></i><?= $d['poin']; ?></td>
                                         <td>
                                             <!-- <a href="<?= base_url('Dashboard/formulir/' . $d['id_jemput']); ?>">Edit</a> -->
 

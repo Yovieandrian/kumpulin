@@ -36,8 +36,8 @@
                                     <th scope="col">Karton Kardus</th>
                                     <th scope="col">Kaleng Aluminium</th>
                                     <th scope="col">Jerigen</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Poin</th>
+                                    <!-- <th scope="col">Status</th> -->
+                                    <!-- <th scope="col">Poin</th> -->
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -60,8 +60,8 @@
                                         <td><?= $d['karton']; ?></td>
                                         <td><?= $d['kaleng']; ?></td>
                                         <td><?= $d['jerigen']; ?></td>
-                                        <td><?= $d['status']; ?></td>
-                                        <td><i class='bx bx-coin-stack' style="color: gold;"></i><?= $d['poin']; ?></td>
+                                        <!-- <td><?= $d['status']; ?></td> -->
+                                        <!-- <td><i class='bx bx-coin-stack' style="color: gold;"></i><?= $d['poin']; ?></td> -->
                                         <td>
 
                                             <!-- <a href="<?= base_url('Dashboard/formulir/' . $d['id_jemput']); ?>">Edit</a> -->

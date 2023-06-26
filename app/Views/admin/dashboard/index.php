@@ -8,7 +8,7 @@
         <h1>Dashboard</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="">Home</a></li>
                 <li class="breadcrumb-item active">Dashboard</li>
             </ol>
         </nav>
@@ -25,7 +25,7 @@
                     <div class="col-xxl-6 col-xl-12">
                         <div class="card info-card customers-card">
 
-                            <div class="filter">
+                            <!-- <div class="filter">
                                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <li class="dropdown-header text-start">
@@ -35,10 +35,10 @@
                                     <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
                                     <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
 
                             <div class="card-body">
-                                <h5 class="card-title">Data Pengguna <span>| Hari Ini</span></h5>
+                                <h5 class="card-title">Data Pengguna</h5>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                         <i class="bi bi-people"></i>
@@ -58,7 +58,7 @@
                     <div class="col-xxl-6 col-xl-12">
                         <div class="card info-card orders-card">
 
-                            <div class="filter">
+                            <!-- <div class="filter">
                                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <li class="dropdown-header text-start">
@@ -68,10 +68,10 @@
                                     <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
                                     <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
 
                             <div class="card-body">
-                                <h5 class="card-title">Data Penjemputan <span>| Hari Ini</span></h5>
+                                <h5 class="card-title">Data Penjemputan</h5>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                         <i class="bi bi-truck"></i>
@@ -87,13 +87,14 @@
                     </div>
                     <!-- End Data Pengguna Card -->
 
-                    <h4>-- Statistik Sampah --</h4>
+                    <!-- <h4>-- Statistik Sampah --</h4> -->
 
+                    <!-- H A R G A   P E R   K I L O -->
                     <!-- Botol Plastik Card -->
                     <div class="col-xxl-3 col-md-6">
                         <div class="card info-card botol-card">
 
-                            <div class="filter">
+                            <!-- <div class="filter">
                                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <li class="dropdown-header text-start">
@@ -103,10 +104,144 @@
                                     <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
                                     <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
 
                             <div class="card-body">
-                                <h5 class="card-title">Botol Plastik <span>| Hari Ini</span></h5>
+                                <h5 class="card-title">Botol Plastik <span>Harga per KG</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-trash3"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>2.000</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Botol Plastik Card -->
+
+                    <!-- Karton Kardus Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card karton-card">
+
+                            <!-- <div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Data Per</h6>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Hari Ini</a></li>
+                                    <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
+                                    <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
+                                </ul>
+                            </div> -->
+
+                            <div class="card-body">
+                                <h5 class="card-title">Karton Kardus <span>Harga per KG</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-trash3"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>2.000</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Karton Kardus Card -->
+
+                    <!-- Kaleng Aluminium Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card kaleng-card">
+
+                            <!-- <div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Data Per</h6>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Hari Ini</a></li>
+                                    <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
+                                    <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
+                                </ul>
+                            </div> -->
+
+                            <div class="card-body">
+                                <h5 class="card-title">Karton Kardus <span>Harga per KG</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-trash3"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>2.000</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Kaleng Aluminium Card -->
+
+                    <!-- Jerigen Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card jerigen-card">
+
+                            <!-- <div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Data Per</h6>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Hari Ini</a></li>
+                                    <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
+                                    <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
+                                </ul>
+                            </div> -->
+
+                            <div class="card-body">
+                                <h5 class="card-title">Jerigen <span>Harga per KG</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-trash3"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>2.000</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Jerigen Card -->
+
+
+                    <!-- T O T A L   B E R A T-->
+                    <!-- Botol Plastik Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card botol-card">
+
+                            <!-- <div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Data Per</h6>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Hari Ini</a></li>
+                                    <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
+                                    <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
+                                </ul>
+                            </div> -->
+
+                            <div class="card-body">
+                                <h5 class="card-title">Botol Plastik</h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -126,7 +261,7 @@
                     <div class="col-xxl-3 col-md-6">
                         <div class="card info-card karton-card">
 
-                            <div class="filter">
+                            <!-- <div class="filter">
                                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <li class="dropdown-header text-start">
@@ -136,10 +271,10 @@
                                     <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
                                     <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
 
                             <div class="card-body">
-                                <h5 class="card-title">Karton Kardus <span>| Hari Ini</span></h5>
+                                <h5 class="card-title">Karton Kardus</h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -159,7 +294,7 @@
                     <div class="col-xxl-3 col-md-6">
                         <div class="card info-card kaleng-card">
 
-                            <div class="filter">
+                            <!-- <div class="filter">
                                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <li class="dropdown-header text-start">
@@ -169,10 +304,10 @@
                                     <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
                                     <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
 
                             <div class="card-body">
-                                <h5 class="card-title">Karton Kardus <span>| Hari Ini</span></h5>
+                                <h5 class="card-title">Karton Kardus</h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -192,7 +327,7 @@
                     <div class="col-xxl-3 col-md-6">
                         <div class="card info-card jerigen-card">
 
-                            <div class="filter">
+                            <!-- <div class="filter">
                                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <li class="dropdown-header text-start">
@@ -202,10 +337,10 @@
                                     <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
                                     <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
 
                             <div class="card-body">
-                                <h5 class="card-title">Jerigen <span>| Hari Ini</span></h5>
+                                <h5 class="card-title">Jerigen</h5>
 
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -228,8 +363,7 @@
                     <div class="col-12">
                         <div class="card">
 
-
-                            <div class="filter">
+                            <!-- <div class="filter">
                                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <li class="dropdown-header text-start">
@@ -240,12 +374,11 @@
                                     <li><a class="dropdown-item" href="#">This Month</a></li>
                                     <li><a class="dropdown-item" href="#">This Year</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
+
                             <!--  -->
                             <div class="card-body">
-
-
-                                <h5 class="card-title">Reports <span>/Today</span></h5>
+                                <!-- <h5 class="card-title">Reports <span>/Today</span></h5> -->
 
                                 Line Chart
                                 <div id="reportsChart"></div>

@@ -23,7 +23,7 @@
                         <h5 class="card-title">Form Tambah Data</h5>
 
                         <!-- Vertical Form -->
-                        <form class="row g-3">
+                        <form class="row g-3" method="post" action="<?= base_url('/dashboard/save'); ?>" id="datauser">
                             <div class="col-12">
                                 <label class="form-label">Nama Pengguna</label>
                                 <input type="text" class="form-control" placeholder="" name="username" id="username" value="<?= set_value('username') ?>">
