@@ -202,9 +202,10 @@
                                                                     <label class="form-label">Status</label>
                                                                     <select class="form-control" placeholder="" name="status" id="status" value="<?= $d['status'] ?>">
                                                                         <option value="Diproses" <?= $d['status'] === 'Diproses' ? 'selected' : '' ?>>Diproses</option>
-                                                                        <option value="Diambil" <?= $d['status'] === 'Diambil' ? 'selected' : '' ?>>Telah diambil</option>
-                                                                        <option value="Ditukar" <?= $d['status'] === 'Ditukar' ? 'selected' : '' ?>>Poin ditukar</option>
-                                                                        <option value="Ditolak" <?= $d['status'] === 'Ditolak' ? 'selected' : '' ?>>Ditolak, Ajukan dengan tanggal/sesi berbeda</option>
+                                                                        <option value="Poin belum ditukar" <?= $d['status'] === 'Poin belum ditukar' ? 'selected' : '' ?>>Poin belum ditukar</option>
+                                                                        <option value="Poin ditukar" <?= $d['status'] === 'Poin ditukar' ? 'selected' : '' ?>>Poin ditukar</option>
+                                                                        <option value="Ditolak, Ajukan dengan tanggal/sesi berbeda" <?= $d['status'] === 'Ditolak, Ajukan dengan tanggal/sesi berbeda' ? 'selected' : '' ?>>Ditolak, Ajukan dengan tanggal/sesi berbeda</option>
+                                                                        <option value="Selesai" <?= $d['status'] === 'Selesai' ? 'selected' : '' ?>>Selesai</option>
                                                                     </select>
                                                                     <span class="text-danger"><?= isset($validation) ? display_error($validation, 'status') : '' ?></span>
                                                                 </div>

@@ -14,6 +14,16 @@ class Dashboard extends BaseController
 {
     public function index()
     {
+        $jemput = new JemputModel();
+        $tbl_jemput = new JemputModel();
+        // $data = [
+        //     'data' => $tbl_jemput->getBotol()
+        $data['total_botol'] = $this->$tbl_jemput->hitungJumlahAsset();
+
+
+        // $botol = $tbl_jemput->select('sum(botol) as sumBotol')->first();
+        // $data['sum'] = $botol['sumBotol'];
+
         return view('admin/dashboard/index');
     }
 
@@ -48,13 +58,28 @@ class Dashboard extends BaseController
 
         return view('admin/data/sampah', compact('data'));
     }
+    // public function index()
+    // {
+    //     $tbl_jemput = new JemputModel();
+
+    //     $data = $tbl_jemput->getAllByUser();
+    //     $poin = $tbl_jemput->getAllPoinByUser();
+
+    //     return view('user/landing-page2', compact('data', 'poin'));
+    // }
 
     public function poin()
     {
-        $jemput = new JemputModel();
-        $data = $jemput->getAll();
 
-        return view('admin/data/poin', compact('data'));
+        $jemput = new JemputModel();
+        $tbl_jemput = new JemputModel();
+
+        $data = $jemput->getAll();
+        $poin = $tbl_jemput->getAllPoinByAllUser();
+
+
+        // return view('admin/data/poin', compact('data'));
+        return view('admin/data/poin', compact('data', 'poin'));
     }
 
     /* public function formulir($id)
@@ -64,6 +89,16 @@ class Dashboard extends BaseController
 
         return view('admin/data/penjemputan', compact('data'));
     } */
+
+    // public function totalbotol()
+    // {
+    //     $jemput = new JemputModel();
+    //     $tbl_jemput = new JemputModel();
+
+    //     $botol = $tbl_jemput->select('sum(botol) as sumBotol')->first();
+    //     $data['sum'] = $botol['sumBotol'];
+    //     return view('admin/dashboard/index', $data);
+    // }
 
     public function dataPengguna()
     {

@@ -22,9 +22,6 @@
                 <div class="card">
                     <div class="card-body table-responsive">
                         <h5 class="card-title">Data Penjemputan Sampah</h5>
-
-
-
                         <!-- Default Table -->
                         <table class="datatable" id="datatable">
                             <thead>
@@ -35,7 +32,7 @@
                                     <th scope="col">Tgl. Penjemputan</th>
                                     <th scope="col">Sesi</th>
                                     <th scope="col">Status</th>
-                                    <!-- <th scope="col">Poin</th> -->
+                                    <th scope="col">Poin</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -55,7 +52,7 @@
                                         <td><?= $d['tgl_jemput']; ?></td>
                                         <td><?= $d['sesi']; ?></td>
                                         <td><?= $d['status']; ?></td>
-                                        <!-- <td><i class='bx bx-coin-stack' style="color: gold;"></i></td> -->
+                                        <td><i class='bx bx-coin-stack' style="color: gold;"></i><?= $d['poin']; ?></td>
                                         <td>
                                             <!-- <a href="<?= base_url('Dashboard/formulir/' . $d['id_jemput']); ?>">Edit</a> -->
 
@@ -197,9 +194,10 @@
                                                                     <label class="form-label">Status</label>
                                                                     <select class="form-control" placeholder="" name="status" id="status" value="<?= $d['status'] ?>">
                                                                         <option value="Diproses" <?= $d['status'] === 'Diproses' ? 'selected' : '' ?>>Diproses</option>
-                                                                        <option value="Telah diambil" <?= $d['status'] === 'Telah diambil' ? 'selected' : '' ?>>Telah diambil</option>
+                                                                        <option value="Poin belum ditukar" <?= $d['status'] === 'Poin belum ditukar' ? 'selected' : '' ?>>Poin belum ditukar</option>
                                                                         <option value="Poin ditukar" <?= $d['status'] === 'Poin ditukar' ? 'selected' : '' ?>>Poin ditukar</option>
                                                                         <option value="Ditolak, Ajukan dengan tanggal/sesi berbeda" <?= $d['status'] === 'Ditolak, Ajukan dengan tanggal/sesi berbeda' ? 'selected' : '' ?>>Ditolak, Ajukan dengan tanggal/sesi berbeda</option>
+                                                                        <option value="Selesai" <?= $d['status'] === 'Selesai' ? 'selected' : '' ?>>Selesai</option>
                                                                     </select>
                                                                     <span class="text-danger"><?= isset($validation) ? display_error($validation, 'status') : '' ?></span>
                                                                 </div>

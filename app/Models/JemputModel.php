@@ -70,9 +70,56 @@ class JemputModel extends Model
         $builder
             ->join('user', 'user.id_user = tbl_jemput.id_user')
             ->where('tbl_jemput.id_user', session()->get('LoggedUser')['user']['id_user'])
-            ->where('tbl_jemput.status', 'Poin ditukar');
+            ->where('tbl_jemput.status', 'Poin belum ditukar');
         // ->join('admin_tambahdata', 'tbl_jemput.id_admtdata = admin_tambahdata.id_admtdata', 'left')
         $query = $builder->get();
         return $query->getResultArray();
+    }
+
+    function getAllPoinByAllUser()
+    {
+        $builder = $this->db->table('tbl_jemput');
+        $builder
+            ->join('user', 'user.id_user = tbl_jemput.id_user')
+            // ->where('tbl_jemput.id_user', session()->get('LoggedUser')['user']['id_user'])
+            ->where('tbl_jemput.status', 'Poin belum ditukar');
+        // ->join('admin_tambahdata', 'tbl_jemput.id_admtdata = admin_tambahdata.id_admtdata', 'left')
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+
+    function getAllPoinByAllUserFilter()
+    {
+        $builder = $this->db->table('tbl_jemput');
+        $builder
+            ->join('user', 'user.id_user = tbl_jemput.id_user')
+            // ->where('tbl_jemput.id_user', session()->get('LoggedUser')['user']['id_user'])
+            ->where('tbl_jemput.status', 'Diproses')
+            ->where('tbl_jemput.status', 'Poin ditukar')
+            ->where('tbl_jemput.status', 'Ditolak, Ajukan dengan tanggal/sesi berbeda')
+            ->where('tbl_jemput.status', 'Selesai');
+
+        // ->join('admin_tambahdata', 'tbl_jemput.id_admtdata = admin_tambahdata.id_admtdata', 'left')
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+
+    // function getBotol()
+    // {
+    //     $builder = $this->db->table('tbl_jemput');
+    //     $builder
+    //         ->select('sum(botol) as sumBotol')->first();
+    //     $query = $builder->get();
+    //     return $query->getResultArray();
+    // }
+    public function hitungJumlahBotol()
+    {
+        $this->db->select_sum('botol');
+        $query = $this->db->get('tbl_jemput');
+        if ($query->num_rows() > 0) {
+            return $query->num_rows();
+        } else {
+            return 0;
+        }
     }
 }

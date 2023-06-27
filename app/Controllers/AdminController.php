@@ -133,7 +133,7 @@ class AdminController extends BaseController
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('AdminController/login')->with('fail', 'You are logged out!');
+        return redirect()->to('AdminController/login')->with('fail', 'Anda Telah Keluar');
 
         // if (session()->has('loggedUser')) {
         //     session()->remove('loggedUser');

@@ -248,7 +248,9 @@
                                         <i class="bi bi-trash3"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>145</h6>
+
+                                        <h6>12</h6>
+
                                     </div>
                                 </div>
                             </div>

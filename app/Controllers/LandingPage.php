@@ -13,8 +13,9 @@ class LandingPage extends BaseController
 
         $data = $tbl_jemput->getAllByUser();
         $poin = $tbl_jemput->getAllPoinByUser();
+        $poinfilter = $tbl_jemput->getAllPoinByAllUserFilter();
 
-        return view('user/landing-page2', compact('data', 'poin'));
+        return view('user/landing-page2', compact('data', 'poin', 'poinfilter'));
     }
 
 
