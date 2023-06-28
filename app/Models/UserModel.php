@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $table = 'user';
-    protected $primarykey = 'id_user';
+    protected $primaryKey = 'id_user';
     protected $useTimestamps = true;
     protected $allowedFields = [
         'username',
@@ -22,4 +22,9 @@ class UserModel extends Model
     {
         return $this->findAll();
     }
+
+    // function hapus($id)
+    // {
+    //     return $this->db->table('user')->delete(['id_user' => $id]);
+    // }
 }

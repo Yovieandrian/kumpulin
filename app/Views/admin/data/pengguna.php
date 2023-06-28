@@ -43,11 +43,13 @@
                             </thead>
                             <tbody>
                                 <?php
+                                $no = 1;
                                 foreach ($data as $user) {
                                     // var_dump($user);
                                 ?>
                                     <tr>
-                                        <td><?php echo $user['id_user']; ?></td>
+                                        <td><?= $no++; ?>.</td>
+                                        <!-- <td><?php echo $user['id_user']; ?></td> -->
                                         <td><?php echo $user['username']; ?></td>
                                         <td><?php echo $user['email']; ?></td>
                                         <td><?php echo $user['no_telp']; ?></td>
@@ -56,7 +58,10 @@
                                         <td>
                                             <!-- Modal Detail-->
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail<?php echo $user['id_user']; ?>">Detail</button>
+                                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?php echo $user['id_user']; ?>">Hapus</button>
                                             <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button> -->
+
+
 
                                             <div class="modal fade" id="modalDetail<?php echo $user['id_user']; ?>" tabindex="-1" aria-labelledby="modalDetailLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
@@ -92,7 +97,7 @@
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                                                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEdit<?php echo $user['id_user']; ?>">Edit</button>
-                                                                <button type="button" class="btn btn-danger">Hapus</button>
+                                                                <!-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" ata-bs-target="#deleteModal">Hapus</button> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -100,6 +105,79 @@
                                                 </div>
                                             </div>
                                             <!-- Modal Detail END-->
+
+
+
+                                            <!-- Modal Edit -->
+                                            <form class="row g-3" method="post" action="<?= base_url('/Dashboard/updatePengguna'); ?>" id="datauser">
+                                                <div class="modal fade" id="modalEdit<?php echo $user['id_user']; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="modalEditLabel">Tambah Data</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <input type="hidden" class="form-control" placeholder="" name="id_user" id="id_user" value="<?php echo $user['id_user']; ?>">
+                                                                <!-- <input type="hidden" class="form-control" placeholder="" name="id_jemput" id="id_jemput" value=""> -->
+                                                                <div class="col-12">
+                                                                    <label class="form-label">Nama Penguna</label>
+                                                                    <!-- <input type="text" class="form-control" placeholder="" name="username" id="username" value=""> -->
+                                                                    <input type="text" class="form-control" placeholder="Username" name="username" id="username" value="<?php echo $user['username']; ?>">
+                                                                    <span class="text-danger"><?= isset($validation) ? display_error($validation, 'username') : '' ?></span>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <label class="form-label">Email</label>
+                                                                    <!-- <input type="text" class="form-control" placeholder="" name="alamat" id="alamat" value=""> -->
+                                                                    <input type="email" class="form-control" placeholder="E-mail" name="email" id="email" value="<?php echo $user['email']; ?>">
+                                                                    <span class="text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <label class="form-label">No. Telp</label>
+                                                                    <!-- <input type="date" class="form-control" placeholder="" name="tgl_jemput" id="tgl_jemput" value=""> -->
+                                                                    <input type="text" class="form-control" placeholder="No. Telp" name="no_telp" id="no_telp" value="<?php echo $user['no_telp']; ?>">
+
+                                                                    <span class="text-danger"><?= isset($validation) ? display_error($validation, 'no_telp') : '' ?></span>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <label class="form-label">Alamat</label>
+                                                                    <!-- <input type="number" class="form-control" placeholder="" name="botol" id="botol" value=""> -->
+                                                                    <input type="text" class="form-control" placeholder="Alamat" name="alamat" id="alamat" value="<?php echo $user['alamat']; ?>">
+
+                                                                    <span class="text-danger"><?= isset($validation) ? display_error($validation, 'alamat') : '' ?></span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalDetail">Batal</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!-- Modal Edit END -->
+
+                                            <!-- Modal Delete -->
+                                            <div class="modal fade" id="deleteModal<?php echo $user['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="deleteModalLabel">Hapus Data</h5>
+                                                        </div>
+                                                        <form action="/Dashboard/delete/<?php echo $user['id_user']; ?>" method="post">
+                                                            <div class="modal-body">
+                                                                <!-- <input type="hidden" class="form-control" placeholder="" name="id_jemput" id="<?php echo $user['id_user']; ?>" value="<?php echo $user['id_user']; ?>"> -->
+                                                                <p>Apakah anda yakin ingin menghapus data pengguna ini?<?php echo $user['id_user']; ?></p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                                <button type="submit" class="btn btn-danger" id="confirmDelete">Delete</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                         </td>
                                     </tr>
@@ -114,8 +192,8 @@
             </div>
 
             <!-- Modal Edit -->
-            <form class="row g-3" method="post" action="<?= base_url('/dashboard/save'); ?>" id="datauser">
-                <div class="modal fade" id="modalEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
+            <form class="row g-3" method="post" action="<?= base_url('/Dashboard/updatePengguna'); ?>" id="datauser">
+                <div class="modal fade" id="modalEdit<?php echo $user['id_user']; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -123,7 +201,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <!-- <input type="hidden" class="form-control" placeholder="" name="id_user" id="id_user" value=""> -->
+                                <input type="hidden" class="form-control" placeholder="" name="id_user" id="id_user" value="<?php echo $user['id_user']; ?>">
                                 <!-- <input type="hidden" class="form-control" placeholder="" name="id_jemput" id="id_jemput" value=""> -->
                                 <div class="col-12">
                                     <label class="form-label">Nama Penguna</label>

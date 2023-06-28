@@ -44,7 +44,7 @@
                                         <i class="bi bi-people"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>1244</h6>
+                                        <h6><?= $jumlahPengguna; ?></h6>
                                         <!-- <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span> -->
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                                         <i class="bi bi-truck"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>1244</h6>
+                                        <h6><?= $jumlahPenjemputan; ?></h6>
                                         <!-- <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span> -->
                                     </div>
                                 </div>
@@ -248,9 +248,7 @@
                                         <i class="bi bi-trash3"></i>
                                     </div>
                                     <div class="ps-3">
-
-                                        <h6>12</h6>
-
+                                        <h6><?= $jumlahBotol; ?></h6>
                                     </div>
                                 </div>
                             </div>
@@ -283,7 +281,7 @@
                                         <i class="bi bi-trash3"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>3264</h6>
+                                        <h6><?= $jumlahKarton; ?></h6>
                                     </div>
                                 </div>
                             </div>
@@ -316,7 +314,7 @@
                                         <i class="bi bi-trash3"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>264</h6>
+                                        <h6><?= $jumlahKaleng; ?></h6>
                                     </div>
                                 </div>
                             </div>
@@ -349,7 +347,7 @@
                                         <i class="bi bi-trash3"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>264</h6>
+                                        <h6><?= $jumlahJerigen; ?></h6>
                                     </div>
                                 </div>
                             </div>
@@ -364,6 +362,66 @@
                     <!--  -->
                     <div class="col-12">
                         <div class="card">
+                            <div class="card">
+
+                                <div class="card-body pb-0">
+                                    <h5 class="card-title">Website Traffic</h5>
+
+                                    <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
+
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", () => {
+                                            echarts.init(document.querySelector("#trafficChart")).setOption({
+                                                tooltip: {
+                                                    trigger: 'item'
+                                                },
+                                                legend: {
+                                                    top: '5%',
+                                                    left: 'center'
+                                                },
+                                                series: [{
+                                                    name: 'Access From',
+                                                    type: 'pie',
+                                                    radius: ['40%', '70%'],
+                                                    avoidLabelOverlap: false,
+                                                    label: {
+                                                        show: false,
+                                                        position: 'center'
+                                                    },
+                                                    emphasis: {
+                                                        label: {
+                                                            show: true,
+                                                            fontSize: '18',
+                                                            fontWeight: 'bold'
+                                                        }
+                                                    },
+                                                    labelLine: {
+                                                        show: false
+                                                    },
+                                                    data: [{
+                                                            value: <?= $jumlahBotol; ?>,
+                                                            name: 'Jumlah Botol'
+                                                        },
+                                                        {
+                                                            value: <?= $jumlahKarton; ?>,
+                                                            name: 'Jumlah Karton'
+                                                        },
+                                                        {
+                                                            value: <?= $jumlahKaleng; ?>,
+                                                            name: 'Jumlah Kaleng'
+                                                        },
+                                                        {
+                                                            value: <?= $jumlahJerigen; ?>,
+                                                            name: 'Jumlah Jerigen'
+                                                        },
+                                                    ]
+                                                }]
+                                            });
+                                        });
+                                    </script>
+
+                                </div>
+                            </div>
 
                             <!-- <div class="filter">
                                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -379,8 +437,8 @@
                             </div> -->
 
                             <!--  -->
-                            <div class="card-body">
-                                <!-- <h5 class="card-title">Reports <span>/Today</span></h5> -->
+                            <!-- <div class="card-body">
+                                <h5 class="card-title">Reports <span>/Today</span></h5>
 
                                 Line Chart
                                 <div id="reportsChart"></div>
@@ -439,7 +497,7 @@
                                 </script>
                                 End Line Chart
 
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>

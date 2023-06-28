@@ -104,6 +104,8 @@ class JemputModel extends Model
         return $query->getResultArray();
     }
 
+
+
     // function getBotol()
     // {
     //     $builder = $this->db->table('tbl_jemput');
@@ -112,14 +114,14 @@ class JemputModel extends Model
     //     $query = $builder->get();
     //     return $query->getResultArray();
     // }
-    public function hitungJumlahBotol()
-    {
-        $this->db->select_sum('botol');
-        $query = $this->db->get('tbl_jemput');
-        if ($query->num_rows() > 0) {
-            return $query->num_rows();
-        } else {
-            return 0;
-        }
-    }
+    // public function hitungJumlahBotol()
+    // {
+    //     $this->db->select_sum('botol');
+    //     $query = $this->db->get('tbl_jemput');
+    //     if ($query->num_rows() > 0) {
+    //         return $query->num_rows();
+    //     } else {
+    //         return 0;
+    //     }
+    // }
 }

@@ -45,6 +45,8 @@ $routes->group('', ['filter' => 'AdminCheck'], function ($routes) {
     $routes->get('/adminKumpulin', 'Dashboard::index');
 });
 
+// $routes->delete('delete/item/', 'Dashboard::delete');
+
 // $routes->get('login', 'Auth::login');
 
 

@@ -119,7 +119,7 @@
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                                                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEdit<?= $d['id_jemput'] ?>">Edit</button>
-                                                                <button type="button" class="btn btn-danger">Hapus</button>
+                                                                <button type="button" class="btn btn-danger delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $d['id_jemput'] ?>">Hapus</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -213,24 +213,41 @@
                                             </form>
                                             <!-- Modal Edit END -->
 
+                                            <!-- Modal Delete -->
+                                            <!-- <div class="modal fade" id="deleteModal<?= $d['id_jemput'] ?>" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="deleteModalLabel">Delete Item</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <input type="hidden" class="form-control" placeholder="" name="id_jemput" id="id_jemput" value="<?= $d['id_jemput'] ?>">
+                                                            <p>Are you sure you want to delete this item?</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                            <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+
+                                            <!-- Modal Delete END -->
+
                                         </td>
                                     </tr>
                             </tbody>
+                        <?php } ?>
+                        </table>
                     </div>
-                    </td>
-                    </tr>
-
-                <?php } ?>
-
-                </tbody>
-                </table>
-                <!-- End Default Table Example -->
+                    <!-- End Default Table Example -->
 
                 </div>
             </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
         <script>
             <?php if (session()->getFlashdata('success') !== NULL) { ?>
                 console.log('success');
@@ -249,6 +266,64 @@
 
                 poin.value = (botol.value * 2000) + (karton.value * 2000) + (kaleng.value * 2000) + (jerigen.value * 2000)
             }
+
+            // $(document).ready(function() {
+            //     var deleteId;
+
+            //     $('.delete-btn').click(function() {
+            //         deleteId = $(this).data('id_jemput');
+            //         deleteId = document.querySelector(`#id_user-${id}`);
+
+            //     });
+
+            //     $('#confirmDelete').click(function() {
+            //         // Kirim request delete ke server menggunakan Ajax atau Fetch API
+
+
+            //         $.ajax({
+            //             url: "delete",
+            //             method: "POST",
+            //             data: {
+            //                 id: id
+            //             },
+            //             success: function(response) {
+            //                 // Tindakan setelah berhasil menghapus data
+            //             }
+            //         });
+
+
+            //         $.ajax({
+            //             url: 'delete/item/' + deleteId, // Ganti dengan URL delete sesuai dengan struktur rute Anda
+            //             type: 'DELETE',
+            //             success: function(response) {
+            //                 // Tampilkan notifikasi atau lakukan aksi lain setelah berhasil dihapus
+            //                 alert('Item deleted successfully');
+            //                 // Refresh halaman atau hapus baris item dari tabel, sesuai kebutuhan
+            //                 location.reload();
+            //             },
+            //             error: function(xhr) {
+            //                 // Tampilkan notifikasi atau aksi lain jika terjadi error
+            //                 alert('Error deleting item');
+            //             }
+            //         });
+            //     });
+            // });
+
+            // $(document).ready(function() {
+            //     $('#datatable').DataTable({
+            //         "ajax": "your_endpoint_url",
+            //         "columns": [{
+            //                 "data": "name"
+            //             },
+            //             {
+            //                 "data": "age"
+            //             },
+            //             {
+            //                 "data": "city"
+            //             }
+            //         ]
+            //     });
+            // });
         </script>
 
     </section>
