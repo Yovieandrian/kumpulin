@@ -479,37 +479,20 @@ class Dashboard extends BaseController
 
             return redirect()->to(base_url('/Dashboard/Pengguna'));
         }
-        // $userModel = new \App\Models\UserModel();
+    }
 
-        // $success = $this->$userModel->hapus($id);
-        // if ($success) {
-        //     session()->setFlashdata('message', 'Ditambahkan');
-        //     return redirect()->to('Dashboard/Pengguna');
-        // }
+    public function deletePenjemputan($id_jemput)
+    {
+        $jemputModel = new \App\Models\JemputModel();
+        $jemput = $jemputModel->find($id_jemput);
 
-        // $jemput = new JemputModel(); // Ganti YourModel dengan model yang sesuai
+        if ($jemput) {
+            $jemputModel->delete($id_jemput);
 
-        // $delete = $jemput->delete($id);
-        // if ($delete) {
-        //     // Redirect ke halaman yang sesuai atau tampilkan pesan sukses
-        //     return redirect()->to('/admin/data/penjemputan')->with('status', 'Data berhasil dihapus.');
-        // } else {
-        //     // Redirect ke halaman yang sesuai atau tampilkan pesan gagal
-        //     return redirect()->to('/admin/data/penjemputan')->with('status', 'Gagal menghapus data.');
-        // }
+            //flash message
+            session()->setFlashdata('message', 'Data Berhasil Dihapus');
 
-
-        // $jemputModel = new \App\Models\JemputModel(); // Ganti YourModel dengan model yang sesuai
-        // $jemputModel->delete($id);
-
-        // return $this->response->setJSON(['status' => 'success']);
-        // return redirect()->to('/admin/data/penjemputan');
-        // if ($delete) {
-        //     // Redirect ke halaman yang sesuai atau tampilkan pesan sukses
-        //     return redirect()->to('/admin')->with('status', 'Data berhasil dihapus.');
-        // } else {
-        //     // Redirect ke halaman yang sesuai atau tampilkan pesan gagal
-        //     return redirect()->to('/admin')->with('status', 'Gagal menghapus data.');
-        // }
+            return redirect()->to(base_url('/Dashboard/Penjemputan'));
+        }
     }
 }

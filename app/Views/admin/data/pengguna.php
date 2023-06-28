@@ -168,7 +168,7 @@
                                                         <form action="/Dashboard/delete/<?php echo $user['id_user']; ?>" method="post">
                                                             <div class="modal-body">
                                                                 <!-- <input type="hidden" class="form-control" placeholder="" name="id_jemput" id="<?php echo $user['id_user']; ?>" value="<?php echo $user['id_user']; ?>"> -->
-                                                                <p>Apakah anda yakin ingin menghapus data pengguna ini?<?php echo $user['id_user']; ?></p>
+                                                                <p>Apakah anda yakin ingin menghapus data pengguna ini?</p>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

@@ -60,6 +60,8 @@
 
                                             <!-- Modal Detail-->
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail<?= $d['id_jemput'] ?>">Detail</button>
+                                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $d['id_jemput'] ?>">Hapus</button>
+
                                             <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button> -->
 
                                             <div class="modal fade" id="modalDetail<?= $d['id_jemput'] ?>" tabindex="-1" aria-labelledby="modalDetailLabel" aria-hidden="true">
@@ -214,24 +216,24 @@
                                             <!-- Modal Edit END -->
 
                                             <!-- Modal Delete -->
-                                            <!-- <div class="modal fade" id="deleteModal<?= $d['id_jemput'] ?>" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="deleteModal<?= $d['id_jemput'] ?>" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="deleteModalLabel">Delete Item</h5>
+                                                            <h5 class="modal-title" id="deleteModalLabel">Hapus Data</h5>
                                                         </div>
-                                                        <div class="modal-body">
-                                                            <input type="hidden" class="form-control" placeholder="" name="id_jemput" id="id_jemput" value="<?= $d['id_jemput'] ?>">
-                                                            <p>Are you sure you want to delete this item?</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                                            <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
-                                                        </div>
+                                                        <form action="/Dashboard/deletePenjemputan/<?= $d['id_jemput'] ?>" method="post">
+                                                            <div class="modal-body">
+                                                                <p>Apakah anda yakin ingin menghapus data pengguna ini?</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                                <button type="submit" class="btn btn-danger" id="confirmDelete">Delete</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
-                                            </div> -->
-
+                                            </div>
                                             <!-- Modal Delete END -->
 
                                         </td>

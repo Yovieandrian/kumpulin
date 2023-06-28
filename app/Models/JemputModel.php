@@ -8,7 +8,7 @@ use SebastianBergmann\CodeCoverage\Driver\Selector;
 class JemputModel extends Model
 {
     protected $table = 'tbl_jemput';
-    protected $primarykey = 'id_jemput';
+    protected $primaryKey = 'id_jemput';
     protected $useTimestamps = false;
     protected $allowedFields = [
         'id_user',
