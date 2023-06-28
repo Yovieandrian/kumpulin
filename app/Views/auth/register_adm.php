@@ -25,20 +25,22 @@
             </div>
 
             <form id="form" method="post" action="<?= base_url('AdminController/save'); ?>">
-                <?= csrf_field(); ?>
-                <?php if (!empty(session()->getFlashdata('fail'))) : ?>
-                    <div class="alert alert-danger"><?= session()->getFlashdata('fail'); ?></div>
-                <?php endif ?>
+                <center>
+                    <?= csrf_field(); ?>
+                    <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+                        <div class="alert alert-danger" style="font-style: italic; color:antiquewhite;"><?= session()->getFlashdata('fail'); ?></div>
+                    <?php endif ?>
 
-                <?php if (!empty(session()->getFlashdata('success'))) : ?>
-                    <div class="alert alert-success"><?= session()->getFlashdata('success'); ?></div>
-                <?php endif ?>
+                    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                        <div class="alert alert-success"><?= session()->getFlashdata('success'); ?></div>
+                    <?php endif ?>
 
-                <div class="alert alert-warning alert-dismissible fade show" role="alert"><?= isset($validation) ? display_error($validation, 'username_adm') : '' ?></div>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert"><?= isset($validation) ? display_error($validation, 'email_adm') : '' ?></div>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert"><?= isset($validation) ? display_error($validation, 'password') : '' ?></div>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert"><?= isset($validation) ? display_error($validation, 'pass_confirm') : '' ?></div>
-
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="font-style: italic; color:antiquewhite;"><?= isset($validation) ? display_error($validation, 'username_adm') : '' ?></div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="font-style: italic; color:antiquewhite;"><?= isset($validation) ? display_error($validation, 'email_adm') : '' ?></div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="font-style: italic; color:antiquewhite;"><?= isset($validation) ? display_error($validation, 'password') : '' ?></div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="font-style: italic; color:antiquewhite;"><?= isset($validation) ? display_error($validation, 'pass_confirm') : '' ?></div>
+                </center>
+                <br>
                 <div class="input-field">
                     <input type="text" class="input " placeholder="Nama Petugas" name="username_adm" id="username_adm" value="<?= set_value('username_adm') ?>">
                     <i class='bx bx-user'></i>

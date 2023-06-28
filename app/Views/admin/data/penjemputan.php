@@ -3,17 +3,22 @@
 <?= $this->Section('content'); ?>
 
 <main id="main" class="main">
+    <title>Data Penjemputan</title>
 
     <div class="pagetitle">
         <h1>Data Penjemputan</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                <!-- <li class="breadcrumb-item">Tables</li> -->
+                <li class="breadcrumb-item"><a href="<?= base_url('Dashboard/index') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active">Data Penjemputan</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
+
+    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+        <div class="alert alert-success" style="font-style: italic; color:black;"><?= session()->getFlashdata('success'); ?></div>
+    <?php endif ?>
+
 
     <section class="section">
         <div class="row">
@@ -54,16 +59,12 @@
                                         <td><?= $d['status']; ?></td>
                                         <td><i class='bx bx-coin-stack' style="color: gold;"></i><?= $d['poin']; ?></td>
                                         <td>
-                                            <!-- <a href="<?= base_url('Dashboard/formulir/' . $d['id_jemput']); ?>">Edit</a> -->
 
 
-
-                                            <!-- Modal Detail-->
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail<?= $d['id_jemput'] ?>">Detail</button>
                                             <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $d['id_jemput'] ?>">Hapus</button>
 
-                                            <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button> -->
-
+                                            <!-- Modal Detail-->
                                             <div class="modal fade" id="modalDetail<?= $d['id_jemput'] ?>" tabindex="-1" aria-labelledby="modalDetailLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -268,64 +269,6 @@
 
                 poin.value = (botol.value * 2000) + (karton.value * 2000) + (kaleng.value * 2000) + (jerigen.value * 2000)
             }
-
-            // $(document).ready(function() {
-            //     var deleteId;
-
-            //     $('.delete-btn').click(function() {
-            //         deleteId = $(this).data('id_jemput');
-            //         deleteId = document.querySelector(`#id_user-${id}`);
-
-            //     });
-
-            //     $('#confirmDelete').click(function() {
-            //         // Kirim request delete ke server menggunakan Ajax atau Fetch API
-
-
-            //         $.ajax({
-            //             url: "delete",
-            //             method: "POST",
-            //             data: {
-            //                 id: id
-            //             },
-            //             success: function(response) {
-            //                 // Tindakan setelah berhasil menghapus data
-            //             }
-            //         });
-
-
-            //         $.ajax({
-            //             url: 'delete/item/' + deleteId, // Ganti dengan URL delete sesuai dengan struktur rute Anda
-            //             type: 'DELETE',
-            //             success: function(response) {
-            //                 // Tampilkan notifikasi atau lakukan aksi lain setelah berhasil dihapus
-            //                 alert('Item deleted successfully');
-            //                 // Refresh halaman atau hapus baris item dari tabel, sesuai kebutuhan
-            //                 location.reload();
-            //             },
-            //             error: function(xhr) {
-            //                 // Tampilkan notifikasi atau aksi lain jika terjadi error
-            //                 alert('Error deleting item');
-            //             }
-            //         });
-            //     });
-            // });
-
-            // $(document).ready(function() {
-            //     $('#datatable').DataTable({
-            //         "ajax": "your_endpoint_url",
-            //         "columns": [{
-            //                 "data": "name"
-            //             },
-            //             {
-            //                 "data": "age"
-            //             },
-            //             {
-            //                 "data": "city"
-            //             }
-            //         ]
-            //     });
-            // });
         </script>
 
     </section>

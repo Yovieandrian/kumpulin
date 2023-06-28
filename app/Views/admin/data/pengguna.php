@@ -3,17 +3,21 @@
 <?= $this->Section('content'); ?>
 
 <main id="main" class="main">
+    <title>Data Pengguna</title>
 
     <div class="pagetitle">
         <h1>Data Pengguna</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                <!-- <li class="breadcrumb-item">Tables</li> -->
+                <li class="breadcrumb-item"><a href="<?= base_url('Dashboard/index') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active">Data Pengguna</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
+
+    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+        <div class="alert alert-success" style="font-style: italic; color:black;"><?= session()->getFlashdata('success'); ?></div>
+    <?php endif ?>
 
     <section class="section">
         <div class="row">
@@ -22,12 +26,8 @@
                 <div class="card">
                     <div class="card-body table-responsive">
                         <h5 class="card-title">Data Pengguna Kumpulin</h5>
-                        <!-- <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#modalEdit" onclick="location.href='<?= site_url('AdminController/login') ?>'">Tambah Data</button> -->
+
                         <button type="button" class="btn btn-primary mb-4" onclick="location.href='<?= site_url('Dashboard/dataPengguna') ?>'">Tambah Data</button>
-
-                        <a href=""></a>
-
-
 
                         <!-- Default Table -->
                         <table id="datatable" class="datatable mt-2" style="width:100%">
@@ -56,13 +56,11 @@
                                         <td><?php echo $user['alamat']; ?></td>
                                         <!-- <td scope="col">Edit | Delete</td> -->
                                         <td>
-                                            <!-- Modal Detail-->
+
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail<?php echo $user['id_user']; ?>">Detail</button>
                                             <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?php echo $user['id_user']; ?>">Hapus</button>
-                                            <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button> -->
 
-
-
+                                            <!-- Modal Detail-->
                                             <div class="modal fade" id="modalDetail<?php echo $user['id_user']; ?>" tabindex="-1" aria-labelledby="modalDetailLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
@@ -101,12 +99,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
                                             </div>
                                             <!-- Modal Detail END-->
-
-
 
                                             <!-- Modal Edit -->
                                             <form class="row g-3" method="post" action="<?= base_url('/Dashboard/updatePengguna'); ?>" id="datauser">
@@ -223,15 +218,6 @@
 
                                     <span class="text-danger"><?= isset($validation) ? display_error($validation, 'no_telp') : '' ?></span>
                                 </div>
-                                <!-- <div class="col-12">
-                                                <label class="form-label">Sesi</label>
-                                                <select class="form-control" placeholder="" name="sesi" id="sesi" value="">
-                                                    <option value="Sesi 1: 08.00 - 10.00" >Sesi 1: 08.00 - 10.00</option>
-                                                    <option value="Sesi 2: 10.00 - 12.00" >Sesi 2: 10.00 - 12.00</option>
-                                                    <option value="Sesi 3: 14.00 - 16.30" >Sesi 3: 14.00 - 16.30</option>
-                                                </select>
-                                                <span class="text-danger"></span>
-                                            </div> -->
                                 <div class="col-12">
                                     <label class="form-label">Alamat</label>
                                     <!-- <input type="number" class="form-control" placeholder="" name="botol" id="botol" value=""> -->
@@ -253,28 +239,6 @@
 
                                     <span class="text-danger"><?= isset($validation) ? display_error($validation, 'pass_confirm') : '' ?></span>
                                 </div>
-                                <!-- <div class="col-12">
-                                                <label class="form-label">Jerigen *Kg</label>
-                                                <input type="number" class="form-control" placeholder="" name="jerigen" id="jerigen" value="">
-                                                <span class="text-danger"></span>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <label class="form-label">Poin</label>
-                                                <input type="number" class="form-control" placeholder="" name="poin" id="poin" value="">
-                                                <span class="text-danger"></span>
-                                            </div>
-                                            <div class="col-12">
-                                                <label class="form-label">Status</label>
-                                                <select class="form-control" placeholder="" name="status" id="status" value="">
-                                                    <option value="Diproses" >Diproses</option>
-                                                    <option value="Diambil" >Telah diambil</option>
-                                                    <option value="Ditukar" >Poin ditukar</option>
-                                                    <option value="Ditolak" >Ditolak, Ajukan dengan tanggal/sesi berbeda</option>
-                                                </select>
-                                                <span class="text-danger"></span>
-                                            </div> -->
-
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalDetail">Batal</button>
@@ -285,8 +249,7 @@
                 </div>
             </form>
             <!-- Modal Edit END -->
-
-
+        </div>
     </section>
 </main>
 

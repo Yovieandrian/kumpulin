@@ -12,24 +12,27 @@ class AdminController extends BaseController
         helper(['url', 'form']);
     }
 
+    // Untuk link menuju ke halaman login
     public function index()
     {
         return redirect()->to(site_url('login'));
     }
 
+    // Halaman login petugas
     public function login()
     {
         return view('auth/login_adm');
     }
 
+    // Halaman register petugas
     public function register()
     {
         return view('auth/register_adm');
     }
 
+    // Proses register petugas
     public function save()
     {
-        // Let's validate request
         $validation = $this->validate([
             'username_adm' => [
                 'rules' => 'required|min_length[4]|max_length[50]|is_unique[admin.username_adm]',
@@ -89,6 +92,7 @@ class AdminController extends BaseController
         }
     }
 
+    // Proses validasi akun dari register untuk masuk ke login
     public function check()
     {
         $validation = $this->validate([
@@ -129,15 +133,11 @@ class AdminController extends BaseController
         }
     }
 
+    // Logout
     public function logout()
     {
         $session = session();
         $session->destroy();
         return redirect()->to('AdminController/login')->with('fail', 'Anda Telah Keluar');
-
-        // if (session()->has('loggedUser')) {
-        //     session()->remove('loggedUser');
-        //     return redirect()->to('AdminController/login?access=out')->with('fail', 'You are logged out!');
-        // }
     }
 }

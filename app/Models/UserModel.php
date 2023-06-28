@@ -17,14 +17,8 @@ class UserModel extends Model
         'password'
     ];
 
-    // 02/04
     public function getUsers()
     {
         return $this->findAll();
     }
-
-    // function hapus($id)
-    // {
-    //     return $this->db->table('user')->delete(['id_user' => $id]);
-    // }
 }

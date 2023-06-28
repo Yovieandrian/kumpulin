@@ -20,6 +20,7 @@ class AdminDataModel extends Model
         'status'
     ];
 
+
     function insertById($id)
     {
         $builder = $this->db->table('tbl_jemput');

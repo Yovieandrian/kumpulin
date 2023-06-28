@@ -185,6 +185,96 @@
                         </div>
                     </div>
                 </div>
+                <br>
+                <div class="row dashboard">
+                    <!-- H A R G A   P E R   K I L O -->
+                    <!-- Botol Plastik Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card botol-card">
+                            <center>
+                                <div class="card-body align-items-center">
+                                    <h5 class="card-title">Botol Plastik <span>Harga per KG</span></h5>
+
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-trash3"></i>
+                                        </div>
+                                        <div class="ps-3 align-items-center">
+                                            <h6>2.000</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </center>
+
+                        </div>
+                    </div>
+                    <!-- End Botol Plastik Card -->
+
+                    <!-- Karton Kardus Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card karton-card">
+                            <center>
+                                <div class="card-body align-items-center">
+                                    <h5 class="card-title">Karton Kardus <span>Harga per KG</span></h5>
+
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-trash3"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>2.000</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <!-- End Karton Kardus Card -->
+
+                    <!-- Kaleng Aluminium Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card kaleng-card">
+                            <center>
+                                <div class="card-body align-items-center">
+                                    <h5 class="card-title">Karton Kardus <span>Harga per KG</span></h5>
+
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-trash3"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>2.000</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <!-- End Kaleng Aluminium Card -->
+
+                    <!-- Jerigen Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card jerigen-card">
+                            <center>
+                                <div class="card-body align-items-center">
+                                    <h5 class="card-title">Jerigen <span>Harga per KG</span></h5>
+
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-trash3"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>2.000</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <!-- End Jerigen Card -->
+
+
+                </div>
 
             </div>
         </section>

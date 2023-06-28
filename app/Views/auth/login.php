@@ -23,18 +23,20 @@
             </div>
 
             <form method="post" action="<?= base_url('auth/check'); ?>">
-                <?= csrf_field(); ?>
-                <?php if (!empty(session()->getFlashdata('fail'))) : ?>
-                    <div class="alert alert-danger"><?= session()->getFlashdata('fail'); ?></div>
-                <?php endif ?>
+                <center>
+                    <?= csrf_field(); ?>
+                    <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+                        <div class="alert alert-danger" style="font-style: italic; color:antiquewhite;"><?= session()->getFlashdata('fail'); ?></div>
+                    <?php endif ?>
 
-                <?php if (!empty(session()->getFlashdata('success'))) : ?>
-                    <div class="alert alert-success"><?= session()->getFlashdata('success'); ?></div>
-                <?php endif ?>
+                    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                        <div class="alert alert-success" style="font-style: italic; color:antiquewhite;"><?= session()->getFlashdata('success'); ?></div>
+                    <?php endif ?>
 
-                <div class="alert alert-warning alert-dismissible fade show" role="alert"><?= isset($validation) ? display_error($validation, 'username') : '' ?></div>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert"><?= isset($validation) ? display_error($validation, 'password') : '' ?></div>
-
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="font-style: italic; color:antiquewhite;"><?= isset($validation) ? display_error($validation, 'username') : '' ?></div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="font-style: italic; color:antiquewhite;"><?= isset($validation) ? display_error($validation, 'password') : '' ?></div>
+                </center>
+                <br>
                 <div class="input-field">
                     <input type="text" class="input" placeholder="Username" name="username" id="username" value="<?= set_value('username') ?>">
                     <i class='bx bx-user'></i>

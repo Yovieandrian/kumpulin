@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label">No. Telp</label>
-                                <input type="text" class="form-control" placeholder="" name="no_telp" id="no_telp" value="<?= set_value('no_telp') ?>">
+                                <input type="number" class="form-control" placeholder="" name="no_telp" id="no_telp" value="<?= set_value('no_telp') ?>">
                                 <span class="text-danger"><?= isset($validation) ? display_error($validation, 'no_telp') : '' ?></span>
                             </div>
                             <div class="col-12">
@@ -46,12 +46,12 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label">Password</label>
-                                <input type="text" class="form-control" placeholder="" name="password" id="password" value="<?= set_value('password') ?>">
+                                <input type="password" class="form-control" placeholder="" name="password" id="password" value="<?= set_value('password') ?>">
                                 <span class="text-danger"><?= isset($validation) ? display_error($validation, 'password') : '' ?></span>
                             </div>
                             <div class="col-12">
                                 <label class="form-label">Ulangi Password</label>
-                                <input type="text" class="form-control" placeholder="" name="pass_confirm" id="pass_confirm" value="<?= set_value('pass_confirm') ?>">
+                                <input type="password" class="form-control" placeholder="" name="pass_confirm" id="pass_confirm" value="<?= set_value('pass_confirm') ?>">
                                 <span class="text-danger"><?= isset($validation) ? display_error($validation, 'pass_confirm') : '' ?></span>
                             </div>
 

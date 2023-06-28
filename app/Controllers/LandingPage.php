@@ -6,7 +6,7 @@ use App\Models\JemputModel;
 
 class LandingPage extends BaseController
 {
-    // protected $helpers = ['custom'];
+    // Halaman Landing Page ketika User Telah login
     public function index()
     {
         $tbl_jemput = new JemputModel();
@@ -18,24 +18,7 @@ class LandingPage extends BaseController
         return view('user/landing-page2', compact('data', 'poin', 'poinfilter'));
     }
 
-
-    // public function read()
-    // {
-    //     $data['tbl_jemput'] = $this->tbl_jemput->getAll();
-    //     return view('user/landing-page', $data);
-    // }
-
-    // Function Create
-    /* public function create()
-    {
-        $tbl_jemput = new JemputModel();
-        $data = $tbl_jemput->getAllByUser();
-        $poin = $tbl_jemput->getAllPoinByUser();
-
-        return view('user/landing-page2', compact('data', 'poin'));
-    } */
-
-    // Function Proses Data 
+    // Proses Input Data Penjemputan 
     public function process()
     {
 
@@ -71,10 +54,6 @@ class LandingPage extends BaseController
             } else {
                 return  redirect()->to('LandingPage/index#team')->with('success', 'Berhasil memesan, silahkan cek status anda pada halaman "Aktivitas Anda".');
             }
-
-            // session()->setFlashdata('message', 'Berhasil memesan, silahkan cek status anda pada halaman "Aktivitas Anda".');
-
-            // return redirect()->to(base_url('LandingPage/create'));
         }
     }
 }

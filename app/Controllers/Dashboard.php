@@ -12,11 +12,13 @@ use App\Libraries\Hash;
 
 class Dashboard extends BaseController
 {
+    // Halaman Dashboard
     public function index()
     {
         $dataPengguna = new UserModel();
         $dataPenjemputan = new JemputModel();
 
+        // jumlah botol
         $query = $dataPenjemputan->selectSum('botol')->get();
         $result = $query->getRow();
         $jumlahBotol = $result->botol;
@@ -49,13 +51,7 @@ class Dashboard extends BaseController
         return view('admin/dashboard/index', $data);
     }
 
-    // public function pengguna()
-    // {
-    //     $users = new UserModel();
-    //     $data = $users->getUsers();
-    //     return view('admin/data/pengguna', compact('data'));
-    // }
-
+    // Halaman Data Pengguna
     public function pengguna()
     {
         // $users = new UserModel();
@@ -69,6 +65,8 @@ class Dashboard extends BaseController
         ];
         return view('admin/data/pengguna', $data);
     }
+
+    // Form Pengguna pada halaman admin
     public function dataPengguna()
     {
         $users = new UserModel();
@@ -78,6 +76,7 @@ class Dashboard extends BaseController
         return view('admin/data/form-pengguna', $data);
     }
 
+    // Halaman Data Penjemputan
     public function penjemputan()
     {
         // $jemput = new JemputModel();
@@ -93,6 +92,7 @@ class Dashboard extends BaseController
         return view('admin/data/penjemputan', $data);
     }
 
+    // Halaman Data Sampah
     public function sampah()
     {
         $jemput = new JemputModel();
@@ -101,6 +101,7 @@ class Dashboard extends BaseController
         return view('admin/data/sampah', compact('data'));
     }
 
+    // Halaman Poin Pengguna yang Belum Ditukar
     public function poin()
     {
 
@@ -120,6 +121,7 @@ class Dashboard extends BaseController
         return view('admin/data/poin', compact('data', 'poin'));
     }
 
+    // Proses Tambah Data Pengguna
     public function save()
     {
         helper(['form', 'url']);
@@ -204,6 +206,7 @@ class Dashboard extends BaseController
         }
     }
 
+    // Proses Tambah Data Pengguna
     public function check()
     {
         $validation = $this->validate([
@@ -276,6 +279,7 @@ class Dashboard extends BaseController
         }
     }
 
+    // Proses Update Data untuk Data Penjemputan
     public function update()
     {
         helper(['form', 'url']);
@@ -382,11 +386,11 @@ class Dashboard extends BaseController
         if (!$query) {
             return  redirect()->back()->with('fail', 'Terjadi kesalahan.');
         } else {
-            return  redirect()->to('Dashboard/penjemputan')->with('success', 'Berhasil memesan, silahkan cek status anda pada halaman "Aktivitas Anda".');
+            return  redirect()->to('Dashboard/penjemputan')->with('success', 'Data berhasil diubah.');
         }
     }
 
-
+    // Proses Update Data untuk Data Pengguna
     public function updatePengguna()
     {
         helper(['form', 'url']);
@@ -439,23 +443,6 @@ class Dashboard extends BaseController
                 ])
                 ->where('id_user', $this->request->getPost('id_user'))
                 ->update();
-
-            // $jemputModel = new \App\Models\JemputModel();
-            // $query = $jemputModel
-            //     ->set([
-            //         'tgl_jemput'   => $this->request->getPost('tgl_jemput'),
-            //         'sesi' => $this->request->getPost('sesi'),
-
-            //         'botol' => $this->request->getPost('botol'),
-            //         'karton' => $this->request->getPost('karton'),
-            //         'kaleng' => $this->request->getPost('kaleng'),
-            //         'jerigen' => $this->request->getPost('jerigen'),
-
-            //         'poin' => $this->request->getPost('poin'),
-            //         'status' => $this->request->getPost('status'),
-            //     ])
-            //     ->where('id_jemput', $this->request->getPost('id_jemput'))
-            //     ->update();
         }
 
         if (!$query) {
@@ -465,7 +452,7 @@ class Dashboard extends BaseController
         }
     }
 
-
+    // Proses Delete Data Pengguna
     public function delete($id_user)
     {
         $userModel = new \App\Models\UserModel();
@@ -475,12 +462,13 @@ class Dashboard extends BaseController
             $userModel->delete($id_user);
 
             //flash message
-            session()->setFlashdata('message', 'Data Berhasil Dihapus');
+            session()->setFlashdata('success', 'Data Berhasil Dihapus');
 
             return redirect()->to(base_url('/Dashboard/Pengguna'));
         }
     }
 
+    // Proses Delete Data Penjemputan
     public function deletePenjemputan($id_jemput)
     {
         $jemputModel = new \App\Models\JemputModel();
@@ -490,7 +478,7 @@ class Dashboard extends BaseController
             $jemputModel->delete($id_jemput);
 
             //flash message
-            session()->setFlashdata('message', 'Data Berhasil Dihapus');
+            session()->setFlashdata('success', 'Data Berhasil Dihapus');
 
             return redirect()->to(base_url('/Dashboard/Penjemputan'));
         }

@@ -12,27 +12,27 @@ class Auth extends BaseController
         helper(['url', 'form']);
     }
 
+    // Halaman login pengguna
     public function index()
     {
-        // session()->setFlashdata('swal_text', 'Berhasil login');
         return redirect()->to(site_url('login'));
     }
 
+    // Halaman login pengguna
     public function login()
     {
-        // session()->setFlashdata('swal_icon', 'Berhasil');
-        // session()->setFlashdata('swal_title', 'Berhasil');
         return view('auth/login');
     }
 
+    // Halaman register pengguna
     public function register()
     {
         return view('auth/register');
     }
 
+    // Proses register pengguna
     public function save()
     {
-        // Let's validate request
         $validation = $this->validate([
             'username' => [
                 'rules' => 'required|min_length[4]|max_length[50]|is_unique[user.username]',
@@ -112,6 +112,7 @@ class Auth extends BaseController
         }
     }
 
+    // Proses validasi akun dari register untuk masuk ke login
     public function check()
     {
         $validation = $this->validate([
@@ -153,15 +154,11 @@ class Auth extends BaseController
         }
     }
 
+    // Logout
     public function logout()
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('Auth/login')->with('fail', 'You are logged out!');
-
-        // if (session()->has('loggedUser')) {
-        //     session()->remove('loggedUser');
-        //     return redirect()->to('AdminController/login?access=out')->with('fail', 'You are logged out!');
-        // }
+        return redirect()->to('Auth/login')->with('success', 'You are logged out!');
     }
 }

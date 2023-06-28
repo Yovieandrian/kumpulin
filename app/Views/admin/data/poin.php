@@ -3,13 +3,13 @@
 <?= $this->Section('content'); ?>
 
 <main id="main" class="main">
+    <title>Poin Pengguna</title>
 
     <div class="pagetitle">
         <h1>Data Penjemputan</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                <!-- <li class="breadcrumb-item">Tables</li> -->
+                <li class="breadcrumb-item"><a href="<?= base_url('Dashboard/index') ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active">Data Penjemputan</li>
             </ol>
         </nav>
@@ -22,8 +22,6 @@
                 <div class="card">
                     <div class="card-body table-responsive">
                         <h5 class="card-title">Data Penjemputan Sampah</h5>
-
-
 
                         <!-- Default Table -->
                         <table class="datatable" id="datatable">
@@ -57,13 +55,9 @@
                                         <td><?= $d['status']; ?></td>
                                         <td><i class='bx bx-coin-stack' style="color: gold;"></i><?= $d['poin']; ?></td>
                                         <td>
-                                            <!-- <a href="<?= base_url('Dashboard/formulir/' . $d['id_jemput']); ?>">Edit</a> -->
-
-
 
                                             <!-- Modal Detail-->
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail<?= $d['id_jemput'] ?>">Detail</button>
-                                            <!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button> -->
 
                                             <div class="modal fade" id="modalDetail<?= $d['id_jemput'] ?>" tabindex="-1" aria-labelledby="modalDetailLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
