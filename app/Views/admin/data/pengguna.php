@@ -38,7 +38,7 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">No. Telp</th>
                                     <th scope="col">Alamat</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col" class="align-items-center justify-content-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,7 +55,7 @@
                                         <td><?php echo $user['no_telp']; ?></td>
                                         <td><?php echo $user['alamat']; ?></td>
                                         <!-- <td scope="col">Edit | Delete</td> -->
-                                        <td>
+                                        <td class="align-items-center justify-content-center">
 
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail<?php echo $user['id_user']; ?>">Detail</button>
                                             <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?php echo $user['id_user']; ?>">Hapus</button>
